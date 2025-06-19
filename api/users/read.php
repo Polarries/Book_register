@@ -10,6 +10,7 @@
                 'bName' => $row['bName'],
                 'aName' => $row['aName'],
                 'code' => $row['code'],
+                'genre' => $row['genre'],
             ));
         }
         echo json_encode($users);
