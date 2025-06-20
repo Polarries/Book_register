@@ -1,44 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ป้องกันเนื้อหาล้นขอบจอ */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
-    font-family: sans-serif;
-    background: #f4f4f4;
-    padding: 40px;
-  }
-  .container {
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 10px;
-    width: 400px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  form label {
-    display: block;
-    margin-top: 15px;
-  }
-  form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  form button {
-    margin-top: 20px;
+  background-color: #6b5b35; 
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 20px;
+}
+
+.outer-box {
+  background-color: #2f2e14; 
+  padding: 20px;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #f0f0d8;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.inner-box {
+  background-color: #e4eccb; /* เขียวอ่อน */
+  border-radius: 50px;
+  padding: 30px;
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Add Button */
+.add-btn {
+  position: absolute;
+  top: 33px;
+  right: 30px;
+  background-color: #6d7e34;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  transform: scale(1.2);
+  background-color: #b1af7d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e4eccb;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px groove #b1af7d;
+}
+
+th {
+  font-size: 23px;
+  background-color: #e4eccb;
+  color: #333;
+  font-weight: bolder;
+}
+
+/*==== Create & Update page ===*/
+
+.create-box {
+  background-color: #2f2e14; 
+  padding: 20px;
+  border-radius: 50px;
+  width: 65%;
+  max-width: 1200px;
+  position: relative;
+}
+
+form label {
+    display: flex;
+    margin-top: 10px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #2f2e14;
+}
+
+form input {
     width: 100%;
     padding: 10px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  #result {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
-    color: #333;
-  }
-  
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border-width: 2.5px;
+    border-color: #2f2e14;
+}
+
+form button {
+  background-color: #6d7e34;
+  color: #fff;
+  width: 100%;
+  border: none;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+form button:hover {
+  transform: scale(1.02);
+  background-color: #b1af7d;
+}
+
+#form-message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  text-align: center;
+  display: none; /* เริ่มต้นยังไม่แสดง */
+}
+
+#form-message.error {
+  color: #721c24;
+}
+
+/*=== Edit & Delete Button ===*/
+
+a i {
+  border: none;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  color: #f0f0d8;
+  background-color: #6d7e34;
+  font-size: 15x;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  margin-right: 10px;
+  padding: 8px;
+}
+
+a i:hover {
+  transform: scale(1.2);
+  background-color: #b1af7d;
+}
+
+

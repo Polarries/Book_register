@@ -3,16 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title><Book-list></Book-list></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     </head>
 
   <body onload="users_read()">
     <script src="script.js"></script>
-    <h1>Book Registration</h1>
-    <button type="button" class="btn btn-primary" onclick="window.open('create.html')">Add</button>
-    <table class="table">
+    
+    <div class="outer-box">
+      
+      <h1>Book Registration</h1>
+    
+    <div class="inner-box">
+    <table class="custom-table">
+      
   <thead>
     <tr>
       <th scope="col">Code</th>
@@ -22,10 +28,12 @@
       <th scope="col">Manage</th>
     </tr>
   </thead>
-  <tbody id="users_table">
-       
-  </tbody>
+  <tbody id="users_table"></tbody>
 </table>
+</div>
+<button type="button" class="add-btn" onclick="location.href='create.html'">Add</button>
+
+</div>
 
 
 

@@ -21,8 +21,7 @@ var user_update = function(){
         .then((result) => {
             var jsonObj = JSON.parse(result);
             if(jsonObj.status == 'ok'){
-                alert('ok');
-                window.open('index.html');
+                location.href='index.html';
             }
             else{ 
                 alert('error');

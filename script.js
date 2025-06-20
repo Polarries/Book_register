@@ -19,8 +19,8 @@
                 <td>`+books.bName+`</td>
                 <td>`+books.aName+`</td>
                 <td>`+books.genre+`</td>
-                <td><a href="edit.html?code=`+books.code+`">Edit</a>
-                    <a href="#" onclick="user_delete(`+books.code+`)">Del</a>
+                <td><a href="edit.html?code=`+books.code+`"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" onclick="user_delete(`+books.code+`)"><i class="fa-solid fa-xmark"></i></a>
                 </td>
             </tr>
         `;
@@ -30,6 +30,28 @@
         .catch((error) => console.error(error));
 }
   
+        function validateForm() {
+        const bName = document.getElementById('bName').value.trim();
+        const aName = document.getElementById('aName').value.trim();
+        const genre = document.getElementById('genre').value.trim();
+        const messageBox = document.getElementById('form-message');
+
+        if (!bName || !aName || !genre) {
+            messageBox.innerText = "- - - - Please fill the form!!! - - - -";
+            messageBox.className = "error";
+            messageBox.style.display = "block";
+            return;
+        }
+
+            messageBox.innerText = "Registered...";
+            messageBox.className = "success";
+            messageBox.style.display = "block";
+
+        //After type in every box
+        user_create();
+        }
+
+
     var user_create = function(){
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -52,8 +74,7 @@
         .then((result) => {
             var jsonObj = JSON.parse(result);
             if(jsonObj.status == 'ok'){
-                alert('ok');
-                window.open('index.html');
+                location.href='index.html';
             }
             else{
                 alert('error');
@@ -82,8 +103,7 @@ fetch("http://localhost/BOOKLIST_CRUD/api/users/delete.php", requestOptions)
   .then((result) => {
     var jsonObj = JSON.parse(result);
         if(jsonObj.status == 'ok'){
-                alert('ok');
-                window.open('index.html');
+                location.href='index.html';
         }
         else{
                 alert('error');
